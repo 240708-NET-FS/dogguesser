@@ -1,0 +1,1 @@
+We are intending to use Dog API (https://dog.ceo/dog-api/) to generate random dog pictures and quiz the user on what breed the dog is.
