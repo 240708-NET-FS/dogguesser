@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "gIyFOiRJfYSgTokj4ZJEJEZpphv/uwCaBqYJuWWIH08=",
+  "Source": "dogguesser-backend",
+  "BasePath": "_content/dogguesser-backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
