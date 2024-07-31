@@ -1,13 +1,14 @@
 # Dogguesser 🐾
 
-Dogguesser! The Game where you can test your knowledge of dog breeds.
-
+Dogguesser! The game where you can test your knowledge of dog breeds.
 
 ## Features
 
-- **feature 1**: placeholder.
-- **feature 2**: palceholder.
--
-
-
 ## Resources used
+
+## Database Schema
+
+## How to run
+
+
+
