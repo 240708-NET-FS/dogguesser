@@ -1,0 +1,42 @@
+Dog Guesser Proposal
+
+1. Project Overview
+    Dog Guesser is an App that creates a quiz like game where users guess the breed of a dog from random pictures.
+
+2. MVP Features
+    Present user with a picture of a dog, while knowing the dogs breed.
+    Take a user's answer and compare with the correct breed.
+        -The user will be able to type and a drop down will help autofill their answer.
+    Quiz should have more than 1 question, ideally 10.
+    There should be a table to track users, and scores.
+    Have a menu to show scores or play and to login.
+        -Scores should show user scores and allow them to compare to all scores.
+
+3. Entity-Relationship Diagram
+    User Entity
+        UserID (int) 
+        Username (string)
+        Password (string)
+
+    Score Entity
+        ScoreID (int)
+        UserID (int) (from User Table)
+        Date (dateTime)
+        Score (float)
+
+4. External API we plan on using
+    Dog API (https://dog.ceo/dog-api/) 
+
+5. Stretch Goals
+    Use React
+    Multiplayer
+    Make it look nice
+    Use JWTs
+
+OTHER
+    Preffer to use discord to message about the project. Have a quick check in after class each day (10 mins max).
+    We are using a Github Project.
+    Don't edit on Main branch. Push Dev to main when we think something significant has changed, like a functioning login.
+        -Branch off of Dev for new projects.
+        -Merge to dev before pushing to main.
+    Try to use common conventions I guess.
