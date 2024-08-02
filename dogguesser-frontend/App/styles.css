@@ -19,6 +19,8 @@ body {
     max-width: 33.33%;
     height: auto;
     margin-bottom: 20px;
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #search-input, #dropdown {
@@ -28,8 +30,38 @@ body {
     font-size: 16px;
 }
 
+.dropdown {
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: white;
+    max-height: 150px; 
+    overflow-y: auto;
+    display: none; 
+    z-index: 1;
+}
+
+.dropdown div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+
 #selected-text {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }

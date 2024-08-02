@@ -1,9 +1,12 @@
 const options = [
-    'dog 1',
-    'dog 2',
-    'dog 3',
-    'cat 1',
-    'cat 2'
+    'Akita',
+    'American Bulldog',
+    'Poodle',
+    'Afghan Hound',
+    'Kai ken',
+    'Siberian Husky',
+    'Labrador',
+    'fox'
 ]; //placeholder
 
 const image = "https://upload.wikimedia.org/wikipedia/commons/d/d5/Retriever_in_water.jpg" //placeholder
@@ -13,12 +16,16 @@ const searchInput = document.getElementById('search-input');
 const displayImage = document.getElementById('display-image');
 
 const populate = (options) => {
-    dropdown.innerHTML = '<option value="">select a doggo</option>'
+    dropdown.innerHTML = ''
 
     options.forEach(option => {
-        const dropdownItem = document.createElement('option');
-        dropdownItem.value = option;
+        const dropdownItem = document.createElement('div');
         dropdownItem.textContent = option;
+
+        dropdownItem.addEventListener('click', () => {
+            searchInput.value = option;
+            dropdown.style.display = 'none';
+        });
         dropdown.appendChild(dropdownItem);
     });
 }
@@ -32,7 +39,14 @@ const updateImage = () => {
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value.toLowerCase();
     const filterOptions = options.filter(option => option.toLowerCase().includes(searchTerm));
-    populate(filterOptions);
+
+    if (filterOptions.length > 0){
+      populate(filterOptions); 
+      dropdown.style.display = 'block'; 
+    } else {
+        dropdown.style.display = 'none'
+    }
+    
 })
 
 
