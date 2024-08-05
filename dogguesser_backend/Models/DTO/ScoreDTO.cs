@@ -1,5 +1,6 @@
 // DTOs/ScoreDTO.cs
-namespace dogguesser_backend.DTO;
+using dogguesser_backend.Models;
+namespace dogguesser_backend.Models.DTO;
 
     public class ScoreDTO
     {
@@ -7,5 +8,7 @@ namespace dogguesser_backend.DTO;
         public int UserID { get; set; }
         public DateTime Date { get; set; }
         public float ScoreValue { get; set; }
+
+      
     }
 

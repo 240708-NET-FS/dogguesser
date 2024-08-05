@@ -1,4 +1,5 @@
 using dogguesser_backend.Data;
+using dogguesser_backend.Models.DTO;
 using dogguesser_backend.Models;
 using Microsoft.EntityFrameworkCore;
 using dogguesser_backend.Service;
@@ -19,7 +20,10 @@ builder.Services.AddCors(co => {
 });
 
 // Add services to the container.
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IScoreService, ScoreService>();
+
+
 builder.Services.AddControllers();
 
 builder.Services.AddControllers();

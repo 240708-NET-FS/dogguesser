@@ -1,4 +1,4 @@
-
+using dogguesser_backend.Models.DTO;
 
 namespace dogguesser_backend.Models;
 public class Score
@@ -9,5 +9,7 @@ public class Score
     public float ScoreValue { get; set; }
 
     public User User { get; set; }
+
+    
 
 }

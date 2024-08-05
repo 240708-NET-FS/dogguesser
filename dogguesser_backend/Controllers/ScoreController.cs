@@ -1,5 +1,6 @@
 using dogguesser_backend.Data;
-using dogguesser_backend.Models;
+using dogguesser_backend.Models.DTO;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using dogguesser_backend.Service;
@@ -16,9 +17,9 @@ public class ScoreController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> SubmitScore(Score score)
+    public async Task<IActionResult> SubmitScore(ScoreDTO scoreDTO)
     {
-        var submittedScore = await _scoreService.SubmitScoreAsync(score);
+        var submittedScore = await _scoreService.SubmitScoreAsync(scoreDTO);
         return Ok(submittedScore);
     }
 
