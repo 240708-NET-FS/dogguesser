@@ -12,8 +12,8 @@ using dogguesser_backend.Data;
 namespace dogguesser_backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240803182056_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240805204152_NewUserTables")]
+    partial class NewUserTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,13 +57,18 @@ namespace dogguesser_backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserID"));
 
+                    b.Property<bool>("AdmUser")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("UserID");
 

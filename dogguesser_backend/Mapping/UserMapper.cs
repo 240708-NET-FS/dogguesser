@@ -17,7 +17,8 @@ namespace dogguesser_backend.Models
             {
                 UserID = user.UserID,
                 Username = user.Username,
-                AdmUser = user.AdmUser
+                AdmUser = user.AdmUser,
+                Password =user.Password
             };
         }
 
@@ -34,6 +35,7 @@ namespace dogguesser_backend.Models
                 UserID = userDTO.UserID,
                 Username = userDTO.Username,
                 AdmUser = userDTO.AdmUser,
+                Password = userDTO.Password
                 // Note: Password is not included in DTO, so it needs to be set separately
             };
         }

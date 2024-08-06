@@ -37,7 +37,7 @@ namespace dogguesser_backend.Controllers
             }
         }
 
-  [HttpPost]
+    [HttpPost]
     public async Task<IActionResult> CreateUser([FromBody] UserDTO userDTO)
     {
         if (userDTO == null)
@@ -47,20 +47,22 @@ namespace dogguesser_backend.Controllers
 
         try
         {
+            // Call the service to create the user
             var createdUser = await _userService.CreateUserAsync(userDTO);
             return CreatedAtAction(nameof(GetUserById), new { userId = createdUser.UserID }, createdUser);
         }
         catch (ArgumentException ex)
         {
+            // Return a 400 Bad Request with the validation error message
             return BadRequest(ex.Message);
         }
-        catch (InvalidOperationException ex)
+        catch (Exception ex)
         {
-            // Log the exception details if needed
-            return StatusCode(500, "An error occurred while processing your request.");
+            // Log the exception if needed and return a 500 Internal Server Error
+            // Example: use a logging framework here
+            return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while creating the user.");
         }
     }
-
 
 
         [HttpPut]
