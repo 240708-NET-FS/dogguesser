@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj": {}
+    "C:\\Users\\Gabe\\Documents\\cleaned\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj": {
+    "C:\\Users\\Gabe\\Documents\\cleaned\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj",
+        "projectUniqueName": "C:\\Users\\Gabe\\Documents\\cleaned\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj",
         "projectName": "dogguesser_backend",
-        "projectPath": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj",
-        "packagesPath": "C:\\Users\\otman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\obj\\",
+        "projectPath": "C:\\Users\\Gabe\\Documents\\cleaned\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj",
+        "packagesPath": "C:\\Users\\Gabe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabe\\Documents\\cleaned\\dogguesser\\dogguesser_backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\otman\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Gabe\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
