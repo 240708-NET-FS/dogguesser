@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k2t7vlNBmeI=",
+  "dgSpecHash": "ESVEyBQ61TI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\otman\\OneDrive\\Desktop\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj",
+  "projectFilePath": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\otman\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\otman\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

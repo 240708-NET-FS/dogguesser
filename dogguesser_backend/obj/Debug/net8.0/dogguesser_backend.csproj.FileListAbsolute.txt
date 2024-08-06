@@ -275,3 +275,4 @@ C:\Users\otman\OneDrive\Desktop\dogguesser\dogguesser_backend\obj\Debug\net8.0\d
 C:\Users\otman\OneDrive\Desktop\dogguesser\dogguesser_backend\obj\Debug\net8.0\dogguesser_backend.genruntimeconfig.cache
 C:\Users\otman\OneDrive\Desktop\dogguesser\dogguesser_backend\obj\Debug\net8.0\ref\dogguesser_backend.dll
 C:\Users\otman\OneDrive\Desktop\dogguesser\dogguesser_backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\otman\Music\DogGuesserProject\dogguesser\dogguesser_backend\bin\Debug\net8.0\BCrypt.Net-Next.dll

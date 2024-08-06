@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dogguesser_backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+171e1cd4fa27e6677c55ab2f1fd6c5cca29f422c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a709af5f645298ced1446eb2fd41422aac14fa61")]
 [assembly: System.Reflection.AssemblyProductAttribute("dogguesser_backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dogguesser_backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
