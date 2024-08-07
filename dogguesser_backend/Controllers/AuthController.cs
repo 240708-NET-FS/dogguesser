@@ -23,8 +23,17 @@ namespace dogguesser_backend.Controllers
         public async Task<IActionResult> Login([FromBody]  UserLoginModel model)
         {
 
+            if (model == null || string.IsNullOrEmpty(model.Username) || string.IsNullOrEmpty(model.Password))
+            {
+                return BadRequest("Invalid login request");
+            }
+
             var dbUser = await _userService.GetUserByUsernameAndPasswordAsync(model.Username, model.Password);
 
+              if (dbUser == null)
+            {
+                return Unauthorized("Invalid username or password");
+            }
 
             var user = new UserToken
             {
