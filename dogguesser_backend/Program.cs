@@ -3,6 +3,7 @@ using dogguesser_backend.Models.DTO;
 using dogguesser_backend.Models;
 using Microsoft.EntityFrameworkCore;
 using dogguesser_backend.Service;
+using dogguesser_backend.Auth;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,9 +23,8 @@ builder.Services.AddCors(co => {
 // Add services to the container.
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IScoreService, ScoreService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
-
-builder.Services.AddControllers();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

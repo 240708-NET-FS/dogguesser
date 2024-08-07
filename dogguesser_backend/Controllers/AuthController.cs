@@ -10,10 +10,10 @@ namespace dogguesser_backend.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly AuthService _authService;
-        private readonly UserService _userService;
+        private readonly IAuthService _authService;
+        private readonly IUserService _userService;
 
-        public AuthController(AuthService authService, UserService userService)
+        public AuthController(IAuthService authService, IUserService userService)
         {
             _authService = authService;
             _userService = userService;

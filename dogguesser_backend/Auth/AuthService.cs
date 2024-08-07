@@ -7,7 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 
 
 namespace dogguesser_backend.Auth;
-public class AuthService
+public class AuthService : IAuthService
 {
     public string GenerateToken(UserToken user)
     {
