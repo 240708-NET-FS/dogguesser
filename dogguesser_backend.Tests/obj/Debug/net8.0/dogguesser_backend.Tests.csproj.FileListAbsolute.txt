@@ -151,3 +151,14 @@ C:\Users\otman\Music\DogGuesserProject\dogguesser\dogguesser_backend.Tests\obj\D
 C:\Users\otman\Music\DogGuesserProject\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\dogguesser_backend.Tests.pdb
 C:\Users\otman\Music\DogGuesserProject\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\dogguesser_backend.Tests.genruntimeconfig.cache
 C:\Users\otman\Music\DogGuesserProject\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\ref\dogguesser_backend.Tests.dll
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\bin\Debug\net8.0\.msCoverageSourceRootsMapping_dogguesser_backend.Tests
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\bin\Debug\net8.0\CoverletSourceRootsMapping_dogguesser_backend.Tests
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\dogguesser_backend.Tests.csproj.AssemblyReference.cache
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\dogguesser_backend.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\dogguesser_backend.Tests.AssemblyInfoInputs.cache
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\dogguesser_backend.Tests.AssemblyInfo.cs
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\dogguesser_backend.Tests.csproj.CoreCompileInputs.cache
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\dogguesser_backend.Tests.sourcelink.json
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\dogguesser_backend.Tests.dll
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\refint\dogguesser_backend.Tests.dll
+C:\Users\smbai\Revature Training Stuff\DogGuesser\dogguesser\dogguesser_backend.Tests\obj\Debug\net8.0\dogguesser_backend.Tests.pdb

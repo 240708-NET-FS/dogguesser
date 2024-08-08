@@ -1676,6 +1676,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Cors": "2.2.0",
           "Microsoft.EntityFrameworkCore": "8.0.7",
+          "Microsoft.EntityFrameworkCore.Analyzers": "8.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.7",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
@@ -4489,32 +4490,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\otman\\.nuget\\packages\\": {}
+    "C:\\Users\\smbai\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend.Tests\\dogguesser_backend.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\smbai\\Revature Training Stuff\\DogGuesser\\dogguesser\\dogguesser_backend.Tests\\dogguesser_backend.Tests.csproj",
       "projectName": "dogguesser_backend.Tests",
-      "projectPath": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend.Tests\\dogguesser_backend.Tests.csproj",
-      "packagesPath": "C:\\Users\\otman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend.Tests\\obj\\",
+      "projectPath": "C:\\Users\\smbai\\Revature Training Stuff\\DogGuesser\\dogguesser\\dogguesser_backend.Tests\\dogguesser_backend.Tests.csproj",
+      "packagesPath": "C:\\Users\\smbai\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\smbai\\Revature Training Stuff\\DogGuesser\\dogguesser\\dogguesser_backend.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\otman\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\smbai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj": {
-              "projectPath": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj"
+            "C:\\Users\\smbai\\Revature Training Stuff\\DogGuesser\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj": {
+              "projectPath": "C:\\Users\\smbai\\Revature Training Stuff\\DogGuesser\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj"
             }
           }
         }
