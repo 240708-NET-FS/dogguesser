@@ -31,6 +31,8 @@ class DogGuesser {
             console.error('Error during fetch operations:', error);
         });
 
+        history.pushState({}, '', '/game');
+
         this.searchInput.addEventListener('input', () => this.handleSearchInput());
         this.dropdown.addEventListener('change', () => this.handleDropdownChange());
     }
@@ -139,7 +141,6 @@ class Round {
     }
 }
 
-// Instantiate the DogGuesser class when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     new DogGuesser();
 });

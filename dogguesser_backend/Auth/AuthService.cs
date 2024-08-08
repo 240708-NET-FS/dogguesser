@@ -31,8 +31,9 @@ public class AuthService : IAuthService
     private static ClaimsIdentity GenerateClaims(UserToken user)
     {
         var claims = new ClaimsIdentity();
-        claims.AddClaim(new Claim(ClaimTypes.Name, user.Username));
-        claims.AddClaim(new Claim(ClaimTypes.Role, user.AdmUser ? "Admin" : "User"));
+        claims.AddClaim(new Claim("UserName", user.Username));
+        claims.AddClaim(new Claim("Role", user.AdmUser ? "Admin" : "User"));
+        claims.AddClaim(new Claim("UserID", user.UserID.ToString()));
 
         return claims;
     }

@@ -38,7 +38,8 @@ namespace dogguesser_backend.Controllers
             var user = new UserToken
             {
                 Username = dbUser.Username,
-                AdmUser = dbUser.AdmUser
+                AdmUser = dbUser.AdmUser,
+                UserID = dbUser.UserID
             };
 
             var token = _authService.GenerateToken(user);
