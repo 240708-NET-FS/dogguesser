@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using System.Net.Http;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
-namespace dogguesser_backend.Service;
+namespace dogguesser_backend.Service; 
 
 public class BreedService : IBreedService
 {
