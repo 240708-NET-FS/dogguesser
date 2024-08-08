@@ -39,19 +39,19 @@ class Login {
             return response.json();
         })
         .then(data => {
-            // Handle successful login, e.g., store token, redirect, etc.
             console.log('Login successful!', data);
-            // Example: store the token in localStorage
             if (data.token) {
-                localStorage.setItem('jwt', data.token);
-                // Decode and display the token using jwt-decode library
+                localStorage.setItem('jwt', data.token);   
                 const decoded = jwtDecode(data.token);
                 localStorage.setItem('userName', decoded.UserName);
                 localStorage.setItem('role', decoded.Role);
                 localStorage.setItem('userId', decoded.UserID);
                 console.log('Decoded JWT:', decoded);
-                // Redirect or other actions
+           
             }
+
+            window.location.href = '../profilePage/profile.html';
+
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
@@ -63,15 +63,3 @@ class Login {
 document.addEventListener('DOMContentLoaded', () => {
     new Login();
 });
-
-// const username = document.getElementById('username').value;
-// const password = document.getElementById('password').value;
-// const loginForm = document.getElementById('login-form');
-
-
-
-// loginForm.addEventListener('submit', function(event) {
-//     event.preventDefault();
-//     console.log("logging in!")
-//     //login(username, password);
-// });
