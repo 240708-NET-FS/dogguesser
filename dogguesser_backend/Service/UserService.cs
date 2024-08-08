@@ -6,7 +6,7 @@ using dogguesser_backend.Models;
 using dogguesser_backend.Models.DTO;
 using dogguesser_backend.Data;
 using dogguesser_backend.Hashing;
-using BCrypt.Net; 
+using BCrypt.Net;
 
 namespace dogguesser_backend.Service
 {
@@ -28,39 +28,40 @@ namespace dogguesser_backend.Service
             return UserMapper.ToDTO(user);
         }
 
-    public async Task<UserDTO> CreateUserAsync(UserDTO userDTO)
-{
-    if (userDTO == null)
-        throw new ArgumentNullException(nameof(userDTO));
+        public async Task<UserDTO> CreateUserAsync(UserDTO userDTO)
+        {
+            if (userDTO == null)
+                throw new ArgumentNullException(nameof(userDTO));
 
-    // Perform additional validation if needed
-    if (string.IsNullOrEmpty(userDTO.Username))
-        throw new ArgumentException("Username is required", nameof(userDTO));
+            // Perform additional validation if needed
+            if (string.IsNullOrEmpty(userDTO.Username))
+                throw new ArgumentException("Username is required", nameof(userDTO));
 
-    if (string.IsNullOrEmpty(userDTO.Password))
-        throw new ArgumentException("Password is required", nameof(userDTO));
+            if (string.IsNullOrEmpty(userDTO.Password))
+                throw new ArgumentException("Password is required", nameof(userDTO));
 
-    // Hash the password
-    var hashedPassword = PasswordHelper.HashPassword(userDTO.Password);
+            // Hash the password
+            var hashedPassword = PasswordHelper.HashPassword(userDTO.Password);
 
-    // Map DTO to entity
-    var user = UserMapper.ToEntity(userDTO);
-    user.Password = hashedPassword; // Set the hashed password
+            // Map DTO to entity
+            var user = UserMapper.ToEntity(userDTO);
+            user.Password = hashedPassword; // Set the hashed password
 
-    try
-    {
-        _context.Users.Add(user);
-        await _context.SaveChangesAsync();
-    }
-    catch (Exception ex)
-    {
-        // Log the exception and handle it as needed
-        throw new InvalidOperationException("An error occurred while creating the user.", ex);
-    }
+            try
+            {
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and handle it as needed
+                throw new InvalidOperationException("An error occurred while creating the user.", ex);
+            }
 
-    // Map entity back to DTO
-    return UserMapper.ToDTO(user);
-}    public async Task<UserDTO> UpdateUserAsync(UserDTO userDTO)
+            // Map entity back to DTO
+            return UserMapper.ToDTO(user);
+        }
+        public async Task<UserDTO> UpdateUserAsync(UserDTO userDTO)
         {
             if (userDTO == null)
                 throw new ArgumentNullException(nameof(userDTO));
@@ -93,6 +94,11 @@ namespace dogguesser_backend.Service
             await _context.SaveChangesAsync();
 
             return true;
+        }
+
+          public async Task<User> GetUserByUsernameAndPasswordAsync(string username, string password)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Username == username && u.Password == PasswordHelper.HashPassword(password));
         }
     }
 }

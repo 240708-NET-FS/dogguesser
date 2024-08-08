@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "dogguesser-backend/1.0.0": {
+      "dogguesser_backend/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.7",
           "Microsoft.EntityFrameworkCore.Design": "8.0.7",
@@ -15,7 +15,7 @@
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
-          "dogguesser-backend.dll": {}
+          "dogguesser_backend.dll": {}
         }
       },
       "Azure.Core/1.35.0": {
@@ -915,7 +915,7 @@
     }
   },
   "libraries": {
-    "dogguesser-backend/1.0.0": {
+    "dogguesser_backend/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
