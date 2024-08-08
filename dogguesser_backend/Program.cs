@@ -15,7 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS 
 builder.Services.AddCors(co => {
     co.AddPolicy("CORS" , pb =>{
-        pb.WithOrigins("http://127.0.0.1:5501")
+        pb.WithOrigins("http://localhost:5501")
+        .AllowAnyMethod()
         .AllowAnyHeader();
     });
 });
