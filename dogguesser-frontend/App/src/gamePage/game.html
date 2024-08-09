@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <title>Dogguesser</title>
     <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <div class="top-bar">
-        <a href="../index.html" class="index-link">Home</a>
-        <div class="title">Dogguesser!!!</div>
-    </div>
+    <nav class="navbar">
+        <a href="../index.html" class="nav-button home-button"><i class="fas fa-home"></i> Home</a>
+        <a href="../profilePage/profile.html" class="nav-button profile-button"><i class="fas fa-user"></i> Profile</a>
+    </nav>
     <div class="container">
-        <img id="display-image" src="../../assets/sadmalt.jpg" alt="unknown doggo">
+        <img id="display-image" src="../../assets/spinny.gif" alt="unknown doggo">
 
         <form id="input-form">
             <div id="search-dropdown-container">
@@ -25,7 +26,7 @@
             <button id="submit-button" type="submit">Submit</button>
         </form>
     </div>
-    <script src="game.js"></script>
+    <script type="module" src="game.js"></script>
 </body>
 
 </html>

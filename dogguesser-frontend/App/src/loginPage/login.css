@@ -54,9 +54,12 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 20px;
+
     transition: background-color 0.3s ease;
 }
 
 .login-card button:hover {
     background-color: #22cebf;
 }
+   

@@ -1,3 +1,5 @@
+import { jwtDecode } from 'jwt-decode';
+
 class DogGuesser {
     constructor() {
         this.options = [
@@ -19,10 +21,18 @@ class DogGuesser {
         this.form = document.getElementById('input-form');
         this.submitButton = document.getElementById('submit-button');
 
+        this.token = localStorage.getItem('jwt');
+        this.decodedToken = "";
+        
+        
         this.init();
     }
 
     init() {
+
+        if (this.token) {
+            this.decodedToken = jwtDecode(this.token);
+        }
         Promise.all([this.fetchDogs(), this.fetchGame()]).then(([dogs, rounds]) => {
             this.options = dogs;
             this.rounds = rounds;
@@ -30,8 +40,6 @@ class DogGuesser {
         }).catch(error => {
             console.error('Error during fetch operations:', error);
         });
-
-        history.pushState({}, '', '/game');
 
         this.searchInput.addEventListener('input', () => this.handleSearchInput());
         this.dropdown.addEventListener('change', () => this.handleDropdownChange());
@@ -65,6 +73,33 @@ class DogGuesser {
                 console.error('problem fetching newgame', error);
                 return [];
             });
+    }
+
+    async postScore(userID, scoreValue) {
+        const scoreData = {
+            userID: userID,
+            date: new Date(),
+            scoreValue: scoreValue
+        };
+    
+        try {
+            const response = await fetch('http://localhost:5153/api/Score', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(scoreData)
+            });
+    
+            if (!response.ok) {
+                throw new Error('ooops. could not post score');
+            }
+    
+            const data = await response.json();
+            console.log('Score posted successfully:', data);
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+        }
     }
 
     toggleSubmitButton() {
@@ -124,12 +159,19 @@ class DogGuesser {
     }
 
     async processRounds() {
+
+        let score = 0;
         for (const r of this.rounds) {
             console.log(r);
             this.updateImageUrl(r.imageUrl);
             const userInput = await this.waitForUserInput();
+            if (userInput == r.correctAnswer){
+                score = score + 1;
+            }
             console.log(`User input: ${r.number}: ${userInput}`);
         }
+
+        this.postScore(this.decodedToken.UserID, score)
     }
 }
 

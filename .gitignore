@@ -5,3 +5,4 @@ dogguesser-frontend/App/node_modules
 dogguesser-frontend/App/dist
 dogguesser-frontend/App/.parcel-cache
 dogguesser-frontend/App/package-lock.json
+dogguesser_backend\appsettings.json

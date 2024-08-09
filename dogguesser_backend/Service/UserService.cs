@@ -96,9 +96,14 @@ namespace dogguesser_backend.Service
             return true;
         }
 
-          public async Task<User> GetUserByUsernameAndPasswordAsync(string username, string password)
+        public async Task<User> GetUserByUsernameAndPasswordAsync(string username, string password)
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.Username == username && u.Password == PasswordHelper.HashPassword(password));
+        }
+
+        public async Task<User> GetUserByUsernameAsync(string username)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
         }
     }
 }

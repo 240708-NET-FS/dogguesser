@@ -37,37 +37,47 @@ namespace dogguesser_backend.Controllers
             }
         }
 
-    [HttpPost]
-    public async Task<IActionResult> CreateUser([FromBody] UserDTO userDTO)
-    {
-        if (userDTO == null)
+        [HttpPost]
+        public async Task<IActionResult> CreateUser([FromBody] UserDTO userDTO)
         {
-            return BadRequest("User data is required.");
-        }
+            if (userDTO == null)
+            {
+                return BadRequest("User data is required.");
+            }
 
-        try
-        {
-            // Call the service to create the user
-            var createdUser = await _userService.CreateUserAsync(userDTO);
-            return CreatedAtAction(nameof(GetUserById), new { userId = createdUser.UserID }, createdUser);
+            try
+            {
+                // Call the service to create the user
+                var createdUser = await _userService.CreateUserAsync(userDTO);
+                return CreatedAtAction(nameof(GetUserById), new { userId = createdUser.UserID }, createdUser);
+            }
+            catch (ArgumentException ex)
+            {
+                // Return a 400 Bad Request with the validation error message
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception if needed and return a 500 Internal Server Error
+                // Example: use a logging framework here
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while creating the user.");
+            }
         }
-        catch (ArgumentException ex)
-        {
-            // Return a 400 Bad Request with the validation error message
-            return BadRequest(ex.Message);
-        }
-        catch (Exception ex)
-        {
-            // Log the exception if needed and return a 500 Internal Server Error
-            // Example: use a logging framework here
-            return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while creating the user.");
-        }
-    }
 
 
         [HttpPut]
         public async Task<IActionResult> UpdateUser([FromBody] UserDTO userDTO)
         {
+
+            var existingUser = await _userService.GetUserByUsernameAsync(userDTO.Username);
+            if (existingUser != null)
+            {
+                return BadRequest("User Exists Already");
+            } else {
+
+
+
+
             if (userDTO == null)
             {
                 return BadRequest("User data is null");
@@ -86,6 +96,8 @@ namespace dogguesser_backend.Controllers
             {
                 // Optionally log the exception
                 return StatusCode(500, "Internal server error");
+            }
+
             }
         }
 

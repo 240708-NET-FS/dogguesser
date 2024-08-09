@@ -43,9 +43,6 @@ class Login {
             if (data.token) {
                 localStorage.setItem('jwt', data.token);   
                 const decoded = jwtDecode(data.token);
-                localStorage.setItem('userName', decoded.UserName);
-                localStorage.setItem('role', decoded.Role);
-                localStorage.setItem('userId', decoded.UserID);
                 console.log('Decoded JWT:', decoded);
            
             }
