@@ -3,6 +3,7 @@ using dogguesser_backend.Models.DTO;
 using dogguesser_backend.Models;
 using Microsoft.EntityFrameworkCore;
 using dogguesser_backend.Service;
+using dogguesser_backend.Auth;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS CORS 
 builder.Services.AddCors(co => {
     co.AddPolicy("CORS" , pb =>{
-        pb.WithOrigins("http://127.0.0.1:5501")
+        pb.WithOrigins("http://localhost:5501")
+        .AllowAnyMethod()
         .AllowAnyHeader();
     });
 });
@@ -22,9 +24,8 @@ builder.Services.AddCors(co => {
 // Add services to the container.
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IScoreService, ScoreService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
-
-builder.Services.AddControllers();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
