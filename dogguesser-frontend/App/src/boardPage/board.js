@@ -27,7 +27,8 @@ class ProfilePage {
             const formattedDate = date.toLocaleTimeString('en-US', options);
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${score.scoreValue}</td>
+                <td>${score.username}</td>
+                <td>${score.score}</td>
                 <td>${`${formattedDate}`}</td>
             `;
             this.scoresTableBody.appendChild(row);
