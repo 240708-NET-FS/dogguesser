@@ -8,4 +8,5 @@ public interface IScoreService
 { 
     Task<ScoreDTO> SubmitScoreAsync(ScoreDTO scoreDTO);
     Task<List<ScoreDTO>> GetLeaderboardAsync();
+    Task<bool> DeleteScoreAsync(int id);
 }
