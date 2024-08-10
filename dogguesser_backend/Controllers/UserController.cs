@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using dogguesser_backend.Service;
 using dogguesser_backend.Models;
 using dogguesser_backend.Models.DTO;
+//using Microsoft.AspNetCore.Authorization;
 
 namespace dogguesser_backend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    
+    //[Authorize] // Ensure all endpoints require authentication
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -18,7 +20,7 @@ namespace dogguesser_backend.Controllers
             _userService = userService;
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet("GetUserByID")]
         public async Task<IActionResult> GetUserById(int userId)
         {
             try
@@ -36,8 +38,8 @@ namespace dogguesser_backend.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-
-    [HttpPost]
+  
+    [HttpPost("api/register")]
     public async Task<IActionResult> CreateUser([FromBody] UserDTO userDTO)
     {
         if (userDTO == null)
@@ -65,7 +67,7 @@ namespace dogguesser_backend.Controllers
     }
 
 
-        [HttpPut]
+        [HttpPut("UpdateUser")]
         public async Task<IActionResult> UpdateUser([FromBody] UserDTO userDTO)
         {
             if (userDTO == null)
@@ -89,7 +91,7 @@ namespace dogguesser_backend.Controllers
             }
         }
 
-        [HttpDelete("{userId}")]
+        [HttpDelete("DeleteUser")]
         public async Task<IActionResult> DeleteUser(int userId)
         {
             try

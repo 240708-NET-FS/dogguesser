@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using dogguesser_backend.Service;
 
-[Route("api/[controller]")]
+
 [ApiController]
 public class ScoreController : ControllerBase
 {
@@ -16,7 +16,7 @@ public class ScoreController : ControllerBase
         _scoreService = scoreService;
     }
 
-    [HttpPost]
+    [HttpPost("AddScore")]
     public async Task<IActionResult> SubmitScore(ScoreDTO scoreDTO)
     {
         var submittedScore = await _scoreService.SubmitScoreAsync(scoreDTO);
@@ -29,4 +29,18 @@ public class ScoreController : ControllerBase
         var leaderboard = await _scoreService.GetLeaderboardAsync();
         return Ok(leaderboard);
     }
+
+     [HttpDelete("DeleteScore/{id}")]
+    public async Task<IActionResult> DeleteScore(int id)
+    {
+        var result = await _scoreService.DeleteScoreAsync(id);
+
+        if (result)
+        {
+            return NoContent(); // 204 No Content
+        }
+
+        return NotFound(); // 404 Not Found
+    }
 }
+

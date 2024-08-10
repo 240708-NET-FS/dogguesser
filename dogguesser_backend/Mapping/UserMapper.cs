@@ -1,42 +1,36 @@
+// Mapping/UserMapper.cs
 using dogguesser_backend.Models;
 using dogguesser_backend.Models.DTO;
 
-namespace dogguesser_backend.Models
+namespace dogguesser_backend.Mapping
 {
     public static class UserMapper
     {
-        // Method to map User to UserDTO
-        public static UserDTO ToDTO(User user)
+        public static UserDTO ToDTO(this User user)
         {
             if (user == null)
-            {
                 return null;
-            }
-            
+
             return new UserDTO
             {
                 UserID = user.UserID,
                 Username = user.Username,
-                AdmUser = user.AdmUser,
-                Password =user.Password
+                AdmUser = user.AdmUser
+                // Note: Password is not included in UserDTO
             };
         }
 
-        // Method to map UserDTO to User
-        public static User ToEntity(UserDTO userDTO)
+        public static User ToEntity(this UserDTO userDTO)
         {
             if (userDTO == null)
-            {
                 return null;
-            }
-            
+
             return new User
             {
                 UserID = userDTO.UserID,
                 Username = userDTO.Username,
                 AdmUser = userDTO.AdmUser,
                 Password = userDTO.Password
-                // Note: Password is not included in DTO, so it needs to be set separately
             };
         }
     }

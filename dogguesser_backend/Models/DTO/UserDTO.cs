@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-namespace dogguesser_backend.Models
+namespace dogguesser_backend.Models.DTO
 {
     public class UserDTO
     {
