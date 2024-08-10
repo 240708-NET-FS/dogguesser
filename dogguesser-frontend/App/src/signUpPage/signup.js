@@ -26,7 +26,7 @@ class Login {
             admUser: false
         };
 
-        fetch('http://localhost:5153/api/User', {
+        fetch(`${global.config.apiUrl}/User`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -6,9 +6,9 @@ class ProfilePage {
         this.scoresTableBody = document.querySelector('#scores-table tbody');
         this.playGameButton = document.getElementById('play-game-button');
         this.logoutButton = document.getElementById('logout-button');
-
         if (!this.token) {
             this.handleMissingToken();
+            
         } else {
             this.init();
         }
@@ -71,7 +71,7 @@ class ProfilePage {
         });
     }
     fetchScores() {
-        return fetch("http://localhost:5153/api/Score/leaderboard ")
+        return fetch(`${global.config.apiUrl}/Score/leaderboard`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('failed to get scoreboard response.');

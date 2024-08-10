@@ -46,7 +46,7 @@ class DogGuesser {
     }
 
     fetchDogs() {
-        return fetch("http://localhost:3001/breeds")
+        return fetch(`${global.config.apiUrl}/breeds`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('failed to get breeds response.');
@@ -61,7 +61,7 @@ class DogGuesser {
     }
 
     fetchGame() {
-        return fetch("http://localhost:3001/newgame")
+        return fetch(`${global.config.apiUrl}/newgame`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('failed to get newgame response.');
@@ -83,7 +83,7 @@ class DogGuesser {
         };
     
         try {
-            const response = await fetch('http://localhost:5153/api/Score', {
+            const response = await fetch(`${global.config.apiUrl}/Score`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

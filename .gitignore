@@ -9,3 +9,8 @@ dogguesser-frontend/App/package-lock.json
 dogguesser_backend\appsettings.json
 dogguesser_backend/bin/
 dogguesser_backend\bin
+dogguesser_backend.Tests/bin
+dogguesser_backend.Tests/obj
+/dogguesser_backend/appsettings.Development.json
+/dogguesser_backend/appsettings.json
+/dogguesser-frontend/App/.env

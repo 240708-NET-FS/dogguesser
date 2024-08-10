@@ -4,6 +4,7 @@ class Login {
     constructor() {
         this.loginForm = document.getElementById('login-form');
         this.initEventListeners();
+        console.log("loaded from config:" + global.config.apiUrl);
     }
 
     initEventListeners() {
@@ -25,7 +26,7 @@ class Login {
             password: password
         };
 
-        fetch('http://localhost:5153/api/Auth/login', {
+        fetch(`${global.config.apiUrl}/Auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
