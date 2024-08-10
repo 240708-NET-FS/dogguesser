@@ -186,3 +186,5 @@ class Round {
 document.addEventListener('DOMContentLoaded', () => {
     new DogGuesser();
 });
+
+module.exports = DogGuesser;

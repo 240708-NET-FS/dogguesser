@@ -1,8 +1,8 @@
-const Login = require('../src/loginPage/login');
+const SignUp = require('../src/signUpPage/signup');
 const jwtDecode = require('jwt-decode'); // Make sure this import is correct
 jest.mock('jwt-decode', () => jest.fn()); // Mock jwtDecode
 
-describe('Login', () => {
+describe('SignUp', () => {
     let originalConsoleError;
     let originalConsoleLog;
 
@@ -11,7 +11,6 @@ describe('Login', () => {
         //supressing these to make the output cleaner
         console.error = jest.fn();
         console.log = jest.fn();
-
         document.body.innerHTML = `
             <form id="login-form">
                 <input id="username" value="testuser" />
@@ -52,8 +51,8 @@ describe('Login', () => {
         jest.clearAllMocks();
     });
 
-    it('should submit login form and store the JWT token', async () => {
-        const loginInstance = new Login();
+    it('should submit signUp form', async () => {
+        const SignUpInstance = new SignUp();
 
         // Simulate form submission
         const form = document.getElementById('login-form');
@@ -64,13 +63,13 @@ describe('Login', () => {
 
         // Check that fetch was called with correct arguments
         expect(global.fetch).toHaveBeenCalledWith(
-            `${global.config.apiUrl}/Auth/login`,
+            `${global.config.apiUrl}/User`,
             expect.objectContaining({
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username: 'testuser', password: 'password123' }),
+                body: JSON.stringify({ username: 'testuser', password: 'password123', admUser: false }),
             })
         );
     });

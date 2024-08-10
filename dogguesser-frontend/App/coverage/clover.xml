@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1723311691100" clover="3.2.0">
-  <project timestamp="1723311691100" name="All files">
-    <metrics statements="55" coveredstatements="49" conditionals="6" coveredconditionals="4" methods="21" coveredmethods="18" elements="82" coveredelements="71" complexity="0" loc="55" ncloc="55" packages="2" files="2" classes="2"/>
+<coverage generated="1723324665836" clover="3.2.0">
+  <project timestamp="1723324665836" name="All files">
+    <metrics statements="205" coveredstatements="123" conditionals="28" coveredconditionals="10" methods="77" coveredmethods="44" elements="310" coveredelements="177" complexity="0" loc="205" ncloc="205" packages="5" files="5" classes="5"/>
     <package name="boardPage">
       <metrics statements="30" coveredstatements="28" conditionals="2" coveredconditionals="2" methods="12" coveredmethods="10"/>
-      <file name="board.js" path="C:\Users\Gabe\Documents\cleaned\dogguesser\dogguesser-frontend\App\src\boardPage\board.js">
+      <file name="board.js" path="C:\Users\Gabe\Documents\git\gabe\dogguesser\dogguesser-frontend\App\src\boardPage\board.js">
         <metrics statements="30" coveredstatements="28" conditionals="2" coveredconditionals="2" methods="12" coveredmethods="10"/>
         <line num="3" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
@@ -38,9 +38,98 @@
         <line num="63" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="gamePage">
+      <metrics statements="83" coveredstatements="47" conditionals="16" coveredconditionals="4" methods="31" coveredmethods="17"/>
+      <file name="game.js" path="C:\Users\Gabe\Documents\git\gabe\dogguesser\dogguesser-frontend\App\src\gamePage\game.js">
+        <metrics statements="83" coveredstatements="47" conditionals="16" coveredconditionals="4" methods="31" coveredmethods="17"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="33" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="51" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="56" count="3" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
+        <line num="66" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="69" count="3" type="stmt"/>
+        <line num="71" count="6" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="94" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="106" count="0" type="stmt"/>
+        <line num="110" count="3" type="stmt"/>
+        <line num="112" count="3" type="stmt"/>
+        <line num="113" count="3" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
+        <line num="124" count="2" type="stmt"/>
+        <line num="125" count="2" type="stmt"/>
+        <line num="127" count="2" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="129" count="0" type="stmt"/>
+        <line num="132" count="2" type="stmt"/>
+        <line num="137" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="138" count="4" type="stmt"/>
+        <line num="143" count="0" type="stmt"/>
+        <line num="144" count="0" type="stmt"/>
+        <line num="146" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="147" count="0" type="stmt"/>
+        <line num="148" count="0" type="stmt"/>
+        <line num="150" count="0" type="stmt"/>
+        <line num="155" count="0" type="stmt"/>
+        <line num="156" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="163" count="3" type="stmt"/>
+        <line num="164" count="3" type="stmt"/>
+        <line num="165" count="3" type="stmt"/>
+        <line num="166" count="3" type="stmt"/>
+        <line num="167" count="3" type="stmt"/>
+        <line num="168" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="169" count="0" type="stmt"/>
+        <line num="171" count="0" type="stmt"/>
+        <line num="174" count="0" type="stmt"/>
+        <line num="180" count="6" type="stmt"/>
+        <line num="181" count="6" type="stmt"/>
+        <line num="182" count="6" type="stmt"/>
+        <line num="186" count="1" type="stmt"/>
+        <line num="187" count="0" type="stmt"/>
+        <line num="190" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="loginPage">
       <metrics statements="25" coveredstatements="21" conditionals="4" coveredconditionals="2" methods="9" coveredmethods="8"/>
-      <file name="login.js" path="C:\Users\Gabe\Documents\cleaned\dogguesser\dogguesser-frontend\App\src\loginPage\login.js">
+      <file name="login.js" path="C:\Users\Gabe\Documents\git\gabe\dogguesser\dogguesser-frontend\App\src\loginPage\login.js">
         <metrics statements="25" coveredstatements="21" conditionals="4" coveredconditionals="2" methods="9" coveredmethods="8"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
@@ -67,6 +156,85 @@
         <line num="61" count="1" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="profilePage">
+      <metrics statements="46" coveredstatements="10" conditionals="4" coveredconditionals="1" methods="16" coveredmethods="2"/>
+      <file name="profile.js" path="C:\Users\Gabe\Documents\git\gabe\dogguesser\dogguesser-frontend\App\src\profilePage\profile.js">
+        <metrics statements="46" coveredstatements="10" conditionals="4" coveredconditionals="1" methods="16" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="signUpPage">
+      <metrics statements="21" coveredstatements="17" conditionals="2" coveredconditionals="1" methods="9" coveredmethods="7"/>
+      <file name="signup.js" path="C:\Users\Gabe\Documents\git\gabe\dogguesser\dogguesser-frontend\App\src\signUpPage\signup.js">
+        <metrics statements="21" coveredstatements="17" conditionals="2" coveredconditionals="1" methods="9" coveredmethods="7"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="37" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
       </file>
     </package>
   </project>
