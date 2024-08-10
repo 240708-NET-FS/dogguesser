@@ -1,4 +1,4 @@
-class ProfilePage {
+class BoardPage {
     constructor() {
         this.welcomeMessage = document.getElementById('welcome-message');
         this.scoresTableBody = document.querySelector('#scores-table tbody');
@@ -57,5 +57,7 @@ class ProfilePage {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new ProfilePage();
+    new BoardPage();
 });
+
+module.exports = BoardPage;
