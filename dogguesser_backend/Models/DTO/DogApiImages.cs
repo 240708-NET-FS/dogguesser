@@ -2,7 +2,7 @@ namespace dogguesser_backend.Models.DTO;
 
 public class DogApiImages
 {
-    public List<string> Message;
+    public List<string> Message{get; set;}
 
-    public string Status;
+    public string Status{get; set;}
 }

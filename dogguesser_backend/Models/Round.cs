@@ -2,9 +2,9 @@ namespace dogguesser_backend.Models;
 
 public class Round
 {
-    public int number;
-    public string imageUrl;
-    public string correctAnswer;
+    public int number{get; set;}
+    public string imageUrl{get; set;}
+    public string correctAnswer{get; set;}
 
     public Round(int roundNumber, string image, string answer)
     {

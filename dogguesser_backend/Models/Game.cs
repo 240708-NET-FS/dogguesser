@@ -1,13 +1,13 @@
 
 
-namespace dogguesser_backend.Models;
+namespace dogguesser_backend.Models; 
 
 public class Game
 {
-    public List<Round> game;
+    public List<Round> rounds{get; set;}
 
-    public Game(List<Round> rounds)
+    public Game(List<Round> roundsList)
     {
-        game = rounds;
+        rounds = roundsList;
     }
 }

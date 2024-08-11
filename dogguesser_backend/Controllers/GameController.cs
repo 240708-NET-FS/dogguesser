@@ -18,7 +18,7 @@ public class GameController : ControllerBase
         _gameService = gameService;
     }
 
-    [HttpGet("game")]
+    [HttpGet()]
     public async Task<IActionResult> MakeRounds()
     {
         var images = await _gameService.GetImages();

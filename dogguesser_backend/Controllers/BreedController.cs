@@ -18,7 +18,7 @@ public class BreedController : ControllerBase
         _breedService = breedService;
     }
 
-    [HttpGet("breeds")]
+    [HttpGet()]
     public async Task<IActionResult> DogBreeds()
     {
         var dogs = await _breedService.GetBreedsList();

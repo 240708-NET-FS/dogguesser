@@ -16,7 +16,21 @@ public class GameService : IGameService
         response.EnsureSuccessStatusCode();
         string responseBody = await response.Content.ReadAsStringAsync();
 
-        var data = JsonSerializer.Deserialize<DogApiImages>(responseBody);
-        return data; 
+        string status = responseBody.Split("status\":\"")[1].Split("\"}")[0];
+        
+        string message = responseBody.Split("[")[1].Split("]")[0];
+        string newMessage = message.Replace("\"", "");
+            
+        string[] messageAsArray = newMessage.Split(",");
+        List<string> messageAsList = [];
+            
+            foreach(string img in messageAsArray)
+        {
+            messageAsList.Add(img);
+        }
+
+        DogApiImages dogApiImages = new(){Status=status, Message=messageAsList};
+
+        return dogApiImages;
     }
 }

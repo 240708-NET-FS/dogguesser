@@ -15,7 +15,7 @@ public static class GameMapper
         {
             string correctAnswer;
             int number = i+1;
-            string image = message[i];
+            string image = message[i].Replace("\\", "");
 
             // I hardcode 4 here because of the returned string
             // An example string is: "https://images.dog.ceo/breeds/corgi-cardigan/n02113186_5833.jpg
@@ -24,8 +24,8 @@ public static class GameMapper
             if (answer.Contains("-"))
             {
                 string[] split = answer.Split('-');
-                string precedent = split[0];
-                string subsequent = split[1];
+                string precedent = split[1];
+                string subsequent = split[0];
                 correctAnswer = $"{precedent} {subsequent}";
             }
             else

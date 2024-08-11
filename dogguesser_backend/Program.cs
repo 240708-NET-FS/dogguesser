@@ -25,6 +25,8 @@ builder.Services.AddCors(co => {
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IScoreService, ScoreService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IGameService, GameService>();
+builder.Services.AddScoped<IBreedService, BreedService>();
 
 
 builder.Services.AddControllers();

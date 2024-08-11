@@ -22,13 +22,64 @@ public class BreedService : IBreedService
             {
                 using (HttpContent content = res.Content)
                 {
-                    var jData = await content.ReadAsStringAsync();
-                    var data = JsonSerializer.Deserialize<DogApiBreedList>(jData);
-                    return data;
+                    var responseBody = await content.ReadAsStringAsync();
+                    
+                    string status = responseBody.Split("status\":\"")[1].Split("\"")[0];
+
+                    string messageFromResponse = responseBody.Split("},")[0].Split(":{")[1];
+                    string cleanMessage = messageFromResponse.Replace("\"", "");
+                    //Console.WriteLine(cleanMessage);
+
+                    string[] breedsAsArray = cleanMessage.Split("],");
+
+                    Dictionary<string, List<string>> dogBreedDict = [];
+
+                    foreach (string str in breedsAsArray)
+                    {
+                        string[] halves = str.Split(":");
+                        string key = halves[0].Trim();
+                        if(halves[1].Length < 2){
+                            dogBreedDict.Add(key, []);
+                        }
+                        else
+                        {
+                            string[] valuesArray = halves[1].Split("[")[1].Split(","); 
+                            List<string> valuesList = [];
+                            foreach(string value in valuesArray)
+                            {
+                                valuesList.Add(value.Trim());
+                            }
+                            dogBreedDict.Add(key, valuesList);
+                        }
+                    }
+                    DogApiBreedList dogApiBreedList = new(){Message = dogBreedDict, Status=status};
+
+                    return dogApiBreedList;
                 }
             }
         }
         
+    }
+
+    public static KeyValuePair<string, List<string>> CleanString(string str)
+    {
+        string[] halves = str.Split(":");
+        string key = halves[0];
+        if(halves[1].Length > 1){
+            KeyValuePair<string, List<string>> dictItem = new(key, []);
+            return dictItem;
+        }
+        else
+        {
+            string[] valuesArray = halves[1].Split("[")[1].Split(","); 
+            List<string> valuesList = [];
+            foreach(string value in valuesArray)
+            {
+                valuesList.Add(value);
+            }
+            KeyValuePair<string, List<string>> dictItem = new(key, valuesList);
+            return dictItem;
+        }
     }
 
 }
