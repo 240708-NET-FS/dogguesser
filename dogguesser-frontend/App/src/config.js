@@ -1,5 +1,5 @@
 require('dotenv').config();
 
 global.config = {
-    apiUrl: process.env.API_URL,
+    apiUrl: process.env.MOCK_API_URL,
 };

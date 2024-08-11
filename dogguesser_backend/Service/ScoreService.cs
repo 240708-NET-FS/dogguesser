@@ -30,4 +30,18 @@ public class ScoreService : IScoreService
 
             return scores.Select(score => score.ToDTO()).ToList(); 
     }
+
+     public async Task<bool> DeleteScoreAsync(int id)
+        {
+            var score = await _context.Scores.FindAsync(id);
+
+            if (score == null)
+            {
+                return false; // Score not found
+            }
+
+            _context.Scores.Remove(score);
+            await _context.SaveChangesAsync();
+            return true; // Deletion successful
+        }
 }

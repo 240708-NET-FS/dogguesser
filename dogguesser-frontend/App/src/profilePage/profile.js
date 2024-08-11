@@ -89,3 +89,5 @@ class ProfilePage {
 document.addEventListener('DOMContentLoaded', () => {
     new ProfilePage();
 });
+
+module.exports = ProfilePage;

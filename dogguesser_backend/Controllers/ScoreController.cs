@@ -29,4 +29,17 @@ public class ScoreController : ControllerBase
         var leaderboard = await _scoreService.GetLeaderboardAsync();
         return Ok(leaderboard);
     }
+
+     [HttpDelete("DeleteScore/{id}")]
+    public async Task<IActionResult> DeleteScore(int id)
+    {
+        var result = await _scoreService.DeleteScoreAsync(id);
+
+        if (result)
+        {
+            return NoContent(); // 204 No Content
+        }
+
+        return NotFound(); // 404 Not Found
+    }
 }

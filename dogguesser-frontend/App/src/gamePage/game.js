@@ -23,8 +23,8 @@ class DogGuesser {
 
         this.token = localStorage.getItem('jwt');
         this.decodedToken = "";
-        
-        
+
+
         this.init();
     }
 
@@ -81,7 +81,7 @@ class DogGuesser {
             date: new Date(),
             scoreValue: scoreValue
         };
-    
+
         try {
             const response = await fetch(`${global.config.apiUrl}/Score`, {
                 method: 'POST',
@@ -90,11 +90,11 @@ class DogGuesser {
                 },
                 body: JSON.stringify(scoreData)
             });
-    
+
             if (!response.ok) {
                 throw new Error('ooops. could not post score');
             }
-    
+
             const data = await response.json();
             console.log('Score posted successfully:', data);
         } catch (error) {
@@ -160,18 +160,22 @@ class DogGuesser {
 
     async processRounds() {
 
-        let score = 0;
-        for (const r of this.rounds) {
-            console.log(r);
-            this.updateImageUrl(r.imageUrl);
-            const userInput = await this.waitForUserInput();
-            if (userInput == r.correctAnswer){
-                score = score + 1;
+        if (this.rounds.length > 0) {
+            let score = 0;
+            for (const r of this.rounds) {
+                console.log(r);
+                this.updateImageUrl(r.imageUrl);
+                const userInput = await this.waitForUserInput();
+                if (userInput == r.correctAnswer) {
+                    score = score + 1;
+                }
+                console.log(`User input: ${r.number}: ${userInput}`);
+               
             }
-            console.log(`User input: ${r.number}: ${userInput}`);
+            this.postScore(this.decodedToken.UserID, score)
+            alert("You scored: " + score);
+            window.location.href = '../profilePage/profile.html';
         }
-
-        this.postScore(this.decodedToken.UserID, score)
     }
 }
 
@@ -186,3 +190,5 @@ class Round {
 document.addEventListener('DOMContentLoaded', () => {
     new DogGuesser();
 });
+
+module.exports = DogGuesser;
