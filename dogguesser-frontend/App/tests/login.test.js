@@ -7,8 +7,6 @@ describe('Login', () => {
     let originalConsoleLog;
 
     beforeEach(() => {
-        // Mock document elements
-        //supressing these to make the output cleaner
         console.error = jest.fn();
         console.log = jest.fn();
 
@@ -46,7 +44,6 @@ describe('Login', () => {
     });
 
     afterEach(() => {
-        // Restore the original console methods
         console.error = originalConsoleError;
         console.log = originalConsoleLog;
         jest.clearAllMocks();
@@ -55,14 +52,11 @@ describe('Login', () => {
     it('should submit login form and store the JWT token', async () => {
         const loginInstance = new Login();
 
-        // Simulate form submission
         const form = document.getElementById('login-form');
         form.dispatchEvent(new Event('submit'));
 
-        // Wait for all promises to resolve
         await Promise.resolve();
 
-        // Check that fetch was called with correct arguments
         expect(global.fetch).toHaveBeenCalledWith(
             `${global.config.apiUrl}/Auth/login`,
             expect.objectContaining({

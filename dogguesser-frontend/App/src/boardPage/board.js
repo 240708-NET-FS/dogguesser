@@ -28,6 +28,7 @@ class BoardPage {
     isAdmin(){
         if (this.token) {
             const decoded = jwtDecode(this.token);
+            console.log("jwtDecodeout:" + decoded);
             return decoded.Role == "Admin" ? true : false;
         } else {
             return false;
