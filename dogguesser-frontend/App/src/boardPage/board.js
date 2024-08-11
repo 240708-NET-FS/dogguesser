@@ -63,8 +63,6 @@ class BoardPage {
                         throw new Error(`Failed to delete score with ID ${scoreID}`);
                     }
                     }).then(() => {
-                        const data = response.json();
-                        console.log(`Score with ID ${scoreID} deleted successfully:`, data);
                         row.remove();
                     });
                 });

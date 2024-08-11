@@ -46,14 +46,14 @@ class DogGuesser {
     }
 
     fetchDogs() {
-        return fetch(`${global.config.apiUrl}/breeds`)
+        return fetch(`${global.config.apiUrl}/breed`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('failed to get breeds response.');
                 }
                 return response.json();
             })
-            .then(data => data.dogs)
+            .then(data => data)
             .catch(error => {
                 console.error('problem fetching breeds', error);
                 return [];
@@ -61,7 +61,7 @@ class DogGuesser {
     }
 
     fetchGame() {
-        return fetch(`${global.config.apiUrl}/newgame`)
+        return fetch(`${global.config.apiUrl}/game`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('failed to get newgame response.');

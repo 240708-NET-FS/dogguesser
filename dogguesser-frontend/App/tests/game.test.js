@@ -12,7 +12,6 @@ describe('DogGuesser', () => {
     let jwtDecode;
 
     beforeEach(() => {
-        //supressing these to make the output cleaner
         console.error = jest.fn();
         console.log = jest.fn();
         document.body.innerHTML = `
@@ -24,11 +23,9 @@ describe('DogGuesser', () => {
             </form>
         `;
 
-        // global.localStorage.getItem.mockReturnValue('mocked-jwt-token');
         global.localStorage.getItem = () => {
             return 'mocked-jwt-token'
         };
-        // jwtDecode.mockReturnValue({ UserID: 123 });
         jwtDecode = () => {
             return { UserID: 123 }
         }
@@ -37,12 +34,12 @@ describe('DogGuesser', () => {
         };
 
         global.fetch = jest.fn((url) => {
-            if (url.includes('/breeds')) {
+            if (url.includes('/breed')) {
                 return Promise.resolve({
                     ok: true,
-                    json: () => Promise.resolve({ dogs: ['Akita', 'Poodle'] }),
+                    json: () => Promise.resolve(['Akita', 'Poodle'] ),
                 });
-            } else if (url.includes('/newgame')) {
+            } else if (url.includes('/game')) {
                 return Promise.resolve({
                     ok: true,
                     json: () => Promise.resolve({
@@ -73,8 +70,8 @@ describe('DogGuesser', () => {
         await Promise.resolve(); // Wait for async operations in init()
 
         expect(fetch).toHaveBeenCalledTimes(2);
-        expect(fetch).toHaveBeenCalledWith(`${global.config.apiUrl}/breeds`);
-        expect(fetch).toHaveBeenCalledWith(`${global.config.apiUrl}/newgame`);
+        expect(fetch).toHaveBeenCalledWith(`${global.config.apiUrl}/breed`);
+        expect(fetch).toHaveBeenCalledWith(`${global.config.apiUrl}/game`);
 
         expect(dogGuesser.options).toEqual(['Akita', 'Poodle']);
         expect(dogGuesser.rounds).toHaveLength(2);
