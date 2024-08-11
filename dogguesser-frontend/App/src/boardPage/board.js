@@ -1,5 +1,10 @@
-class ProfilePage {
+import { jwtDecode } from 'jwt-decode';
+
+
+class BoardPage {
     constructor() {
+
+        this.token = localStorage.getItem('jwt');
         this.welcomeMessage = document.getElementById('welcome-message');
         this.scoresTableBody = document.querySelector('#scores-table tbody');
         this.playGameButton = document.getElementById('play-game-button');
@@ -20,6 +25,16 @@ class ProfilePage {
         this.initEventListeners();
     }
 
+    isAdmin(){
+        if (this.token) {
+            const decoded = jwtDecode(this.token);
+            console.log("jwtDecodeout:" + decoded);
+            return decoded.Role == "Admin" ? true : false;
+        } else {
+            return false;
+        }
+    }
+   
     populateScoresTable() {
         this.scores.forEach(score => {
             const date = new Date(score.date);
@@ -30,6 +45,33 @@ class ProfilePage {
                 <td>${score.scoreValue}</td>
                 <td>${`${formattedDate}`}</td>
             `;
+            row.dataset.scoreId = score.scoreID;
+            if (this.isAdmin()) {
+                const deleteCell = document.createElement('td');
+                deleteCell.className = 'delete-cell';
+                deleteCell.textContent = 'X';
+                deleteCell.addEventListener('click', function() {
+                    const scoreID = row.dataset.scoreId;
+                    console.log("deleting using scoreID: " + scoreID)
+                    fetch(`${global.config.apiUrl}/Score/DeleteScore/${scoreID}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }) .then (response => {
+                        if (!response.ok) {
+                        throw new Error(`Failed to delete score with ID ${scoreID}`);
+                    }
+                    }).then(() => {
+                        const data = response.json();
+                        console.log(`Score with ID ${scoreID} deleted successfully:`, data);
+                        row.remove();
+                    });
+                });
+    
+                row.appendChild(deleteCell);  // Append the delete cell to the row
+            }
+    
             this.scoresTableBody.appendChild(row);
         });
     }
@@ -52,9 +94,11 @@ class ProfilePage {
                 console.error('problem fetching scoreboard', error);
                 return [];
             });
-    }
+    }   
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new ProfilePage();
+    new BoardPage();
 });
+
+module.exports = BoardPage;

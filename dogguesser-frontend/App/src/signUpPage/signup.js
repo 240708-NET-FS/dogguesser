@@ -1,6 +1,6 @@
 import { jwtDecode } from 'jwt-decode';
 
-class Login {
+class SignUp {
     constructor() {
         this.loginForm = document.getElementById('login-form');
         this.initEventListeners();
@@ -53,5 +53,7 @@ class Login {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new Login();
+    new SignUp();
 });
+
+module.exports = SignUp;
