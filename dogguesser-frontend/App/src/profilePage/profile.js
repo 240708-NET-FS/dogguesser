@@ -49,6 +49,7 @@ class ProfilePage {
     console.log(userID);
         filteredScores.forEach(score => {
             const date = new Date(score.date);
+            date.setHours(date.getHours() - 4);
             const options = {  year: '2-digit', month: '2-digit', day: '2-digit' };
             const formattedDate = date.toLocaleTimeString('en-US', options);
             const row = document.createElement('tr');

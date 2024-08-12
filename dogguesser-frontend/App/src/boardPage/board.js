@@ -38,7 +38,8 @@ class BoardPage {
     populateScoresTable() {
         this.scores.forEach(score => {
             const date = new Date(score.date);
-            const options = {  year: '2-digit', month: '2-digit', day: '2-digit' };
+            date.setHours(date.getHours() - 4);
+            const options = {  timeZone: 'America/New_York', year: '2-digit', month: '2-digit', day: '2-digit' };
             const formattedDate = date.toLocaleTimeString('en-US', options);
             const row = document.createElement('tr');
             row.innerHTML = `

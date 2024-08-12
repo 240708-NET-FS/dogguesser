@@ -103,7 +103,7 @@ class DogGuesser {
     }
 
     toggleSubmitButton() {
-        this.submitButton.disabled = !this.searchInput.value.trim();
+    
     }
 
     waitForUserInput() {
