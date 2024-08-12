@@ -22,28 +22,28 @@ Welcome to **DogGuesser**, the ultimate game where you put your dog breed knowle
 
 ### 1. Clone the Repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/240708-NET-FS/dogguesser.git
 cd dogguesser
-\`\`\`
+```
 
 ### 2. Set Up the Frontend
 
 Navigate to the frontend application directory and install the dependencies:
 
-\`\`\`bash
+```bash
 cd dogguesser-frontend/App
 npm install
-\`\`\`
+```
 
 ### 3. Set Up the Backend
 
 Navigate to the backend application directory and install the dependencies:
 
-\`\`\`bash
+```bash
 cd dogguesser_backend
 dotnet run
-\`\`\`
+```
 
 ## Running the Application
 
@@ -51,10 +51,10 @@ dotnet run
 
 Navigate to the \`dogguesser-frontend/App\` folder and start the frontend server:
 
-\`\`\`bash
+```bash
 cd dogguesser-frontend/App
 npm start
-\`\`\`
+```
 
 This will start the frontend on \`http://localhost:5501\`
 
@@ -62,10 +62,10 @@ This will start the frontend on \`http://localhost:5501\`
 
 Navigate to the \`dogguesser-backend\` folder and start the backend server:
 
-\`\`\`bash
+```bash
 cd dogguesser-backend
 dotnet run
-\`\`\`
+```
 
 This will start the backend API on \`http://localhost:5153\`.
 
@@ -73,9 +73,9 @@ This will start the backend API on \`http://localhost:5153\`.
 
 To configure the connection between the frontend and backend, you need to create a \`.env\` file in the \`dogguesser-frontend/App\` directory. The \`.env\` file should contain the following:
 
-\`\`\`
+```
 API_URL=http://localhost:5153/api
-\`\`\`
+```
 
 This environment variable tells the frontend where to send API requests.
 
@@ -85,9 +85,9 @@ This environment variable tells the frontend where to send API requests.
 2. Create a file named \`.env\`.
 3. Add the following content:
 
-\`\`\`plaintext
+```plaintext
 API_URL=http://localhost:5153/api
-\`\`\`
+```
 
 ## Technologies Used
 
