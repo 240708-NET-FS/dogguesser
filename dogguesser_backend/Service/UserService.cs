@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using dogguesser_backend.Models;
 using dogguesser_backend.Data;
+using BCrypt.Net; 
 
 namespace dogguesser_backend.Service
 {
@@ -25,7 +26,7 @@ namespace dogguesser_backend.Service
             return UserMapper.ToDTO(user);
         }
 
-      public async Task<UserDTO> CreateUserAsync(UserDTO userDTO)
+       public async Task<UserDTO> CreateUserAsync(UserDTO userDTO)
 {
     if (userDTO == null)
         throw new ArgumentNullException(nameof(userDTO));
@@ -48,10 +49,7 @@ namespace dogguesser_backend.Service
     }
 
     return UserMapper.ToDTO(user);
-}
-
-
-        public async Task<UserDTO> UpdateUserAsync(UserDTO userDTO)
+}       public async Task<UserDTO> UpdateUserAsync(UserDTO userDTO)
         {
             if (userDTO == null)
                 throw new ArgumentNullException(nameof(userDTO));

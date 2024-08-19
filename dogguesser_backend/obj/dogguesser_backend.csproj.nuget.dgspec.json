@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj": {}
+    "C:\\Users\\otman\\OneDrive\\Desktop\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj": {
+    "C:\\Users\\otman\\OneDrive\\Desktop\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj",
+        "projectUniqueName": "C:\\Users\\otman\\OneDrive\\Desktop\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj",
         "projectName": "dogguesser_backend",
-        "projectPath": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj",
+        "projectPath": "C:\\Users\\otman\\OneDrive\\Desktop\\dogguesser\\dogguesser_backend\\dogguesser_backend.csproj",
         "packagesPath": "C:\\Users\\otman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\otman\\Music\\DogGuesserProject\\dogguesser\\dogguesser_backend\\obj\\",
+        "outputPath": "C:\\Users\\otman\\OneDrive\\Desktop\\dogguesser\\dogguesser_backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\otman\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.AspNetCore.Cors": {
               "target": "Package",
               "version": "[2.2.0, )"

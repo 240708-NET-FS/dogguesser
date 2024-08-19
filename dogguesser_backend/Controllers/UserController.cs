@@ -37,7 +37,7 @@ namespace dogguesser_backend.Controllers
             }
         }
 
-  [HttpPost]
+     [HttpPost]
     public async Task<IActionResult> CreateUser([FromBody] UserDTO userDTO)
     {
         if (userDTO == null)
