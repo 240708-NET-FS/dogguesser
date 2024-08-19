@@ -9,5 +9,7 @@ namespace dogguesser_backend.Service
         Task<UserDTO> CreateUserAsync(UserDTO userDTO);
         Task<UserDTO> UpdateUserAsync(UserDTO userDTO);
         Task<bool> DeleteUserAsync(int userId);
+        Task<User> GetUserByUsernameAndPasswordAsync(string username, string password);
+        Task<User> GetUserByUsernameAsync(string username);
     }
 }
